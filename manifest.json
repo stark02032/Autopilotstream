@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "AutoPilot Stream",
+  "version": "1.0",
+  "description": "Watch. Without interruptions. Automatically clicks 'Skip Intro', 'Next Episode', or 'Skip Ads' buttons on streaming websites.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.netflix.com/*",
+    "*://*.youtube.com/*",
+    "*://*.primevideo.com/*",
+    "*://*.hotstar.com/*",
+    "*://*.crunchyroll.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/*",
+        "*://*.youtube.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.hotstar.com/*",
+        "*://*.crunchyroll.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
